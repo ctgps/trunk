@@ -22,8 +22,48 @@ function bp_core_screen_signup() {
 	if ( !bp_get_signup_allowed() )
 		bp_core_redirect( $bp->root_domain );
 
-	$bp->signup->step = 'request-details';
+	$bp->signup->step = 'who-are-you';
+	
 
+	if ( isset( $_POST['pre_signup_submit'] ) ){
+	    	    
+	   // unset( $_POST['signup_submit'] ); // cancel the original signup process
+	    $bp->signup->uid= get_user_by( 'slug', $_POST['signup_username'] );
+	    
+	    if ( $bp->signup->uid  ){
+	        $bp->signup->uid = $bp->signup->uid->ID;
+	    }
+	    
+	    $user = BP_XProfile_Group::get( array(
+			'profile_group_id' => 1,
+			'user_id' => $bp->signup->uid,
+			'fetch_fields' => true,
+			'fetch_field_data' => true
+		) );
+		
+		if ( $user ){
+		    $user = $user[0];
+		    $grade = NULL; 
+		    
+		    foreach ( $user->fields as $field )
+		    {
+		        if ( $field->name == '年级'){
+		            $grade = $field->data->value;
+		            break;
+		        }
+		    }
+		}
+		
+	    if ( $_POST['signup_grade'] == $grade ) {
+	       $bp->signup->step = 'request-details';
+	       $bp->displayed_user->id = $bp->signup->uid;
+	    }
+	    else {
+	        $bp->signup->error ="未找到符合条件的会员!";
+	    }
+	
+
+	}
 	/* If the signup page is submitted, validate and save */
 	if ( isset( $_POST['signup_submit'] ) ) {
 
@@ -341,20 +381,24 @@ function bp_core_signup_user( $user_login, $user_password, $user_email, $usermet
 	} else {
 		$errors = new WP_Error();
 
-		$user_id = wp_insert_user( array(
-			'user_login' => $user_login,
+		$user_id = wp_update_user( array(
+		    'ID' =>    $_POST['signup_uid'], // update instead of insert user
+			//'user_login' => $user_login,   wp_update_user wouldn't modify this field
 			'user_pass' => $user_password,
-			'display_name' => sanitize_title( $user_login ),
+		    'user_nicename' => $usermeta['field_1'],
+			//'display_name' => sanitize_title( $user_login ),
 			'user_email' => $user_email
 		) );
-
+		// you have to update user_login mamually 
+        $wpdb->update( $wpdb->users, array('user_login' => $user_login ),
+        							 array('ID'  => $_POST['signup_uid']) );
 		if ( is_wp_error( $user_id ) || !$user_id ) {
 			$errors->add( 'registerfail', sprintf( __('<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href="mailto:%s">webmaster</a> !', 'buddypress' ), get_option( 'admin_email' ) ) );
 			return $errors;
 		}
 
-		/* Update the user status to '2' which we will use as 'not activated' (0 = active, 1 = spam, 2 = not active) */
-		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->users SET user_status = 2 WHERE ID = %d", $user_id ) );
+		/* Update the user status to '0' which we will use as 'active' (0 = active, 1 = spam, 2 = not active) */
+		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->users SET user_status = 0 WHERE ID = %d", $user_id ) );
 
 		/* Set any profile data */
 		if ( function_exists( 'xprofile_set_field_data' ) ) {
