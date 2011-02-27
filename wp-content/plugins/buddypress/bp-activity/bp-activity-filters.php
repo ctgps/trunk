@@ -105,22 +105,39 @@ function bp_activity_filter_kses( $content ) {
 function bp_activity_at_name_filter( $content ) {
 	include_once( ABSPATH . WPINC . '/registration.php' );
 
-	$pattern = '/[@]+([A-Za-z0-9-_\.]+)/';
+	//$pattern = '/[@]+([A-Za-z0-9-_\.]+)/';
+	//change to match chinese UTF-8 chars, chinese name is 
+	//supposed to be 2 or 3 words.
+	$pattern = '/[@]([\x{4e00}-\x{9fa5}A-Za-z0-9-_\.]{2,2})/u';
 	preg_match_all( $pattern, $content, $usernames );
 
+	$pattern = '/[@]([\x{4e00}-\x{9fa5}A-Za-z0-9-_\.]{3,3})/u';
+	preg_match_all( $pattern, $content, $usernames2 );
+	
+	$username[1] = array_merge( $username[1], $username2[1] );
+	
 	// Make sure there's only one instance of each username
-	if ( !$usernames = array_unique( $usernames[1] ) )
+	if ( ! $usernames = array_unique( $usernames[1] ) )
 		return $content;
 
 	foreach( (array)$usernames as $username ) {
-		if ( !$user_id = username_exists( $username ) )
+	    /* 
+		   if ( !$user_id =  username_exists( $username ) )
+		   
+    	       username_exists will sanitize username(user_login field
+    	       in database, no chinese allowed), but we'd to use chinese 
+    	       username here, also nicename must ensure to be identical so
+    	       we use display_name here
+    	       bp_core_get_userid_from_display_name is defined by myself
+	    */	    
+		if ( ! $user_id = bp_core_get_userid_from_display_name($username)  )
 			continue;
 
 		// Increase the number of new @ mentions for the user
 		$new_mention_count = (int)get_user_meta( $user_id, 'bp_new_mention_count', true );
 		update_user_meta( $user_id, 'bp_new_mention_count', $new_mention_count + 1 );
 
-		$content = str_replace( "@$username", "<a href='" . bp_core_get_user_domain( bp_core_get_userid( $username ) ) . "' rel='nofollow'>@$username</a>", $content );
+		$content = str_replace( "@$username", "<a href='" . bp_core_get_user_domain( bp_core_get_userid_from_nicename( $username ) ) . "' rel='nofollow'>@$username</a>", $content );
 	}
 
 	return $content;
