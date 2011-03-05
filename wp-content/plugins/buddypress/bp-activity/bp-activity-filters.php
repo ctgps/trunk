@@ -114,7 +114,7 @@ function bp_activity_at_name_filter( $content ) {
 	$pattern = '/[@]([\x{4e00}-\x{9fa5}A-Za-z0-9-_\.]{3,3})/u';
 	preg_match_all( $pattern, $content, $usernames2 );
 	
-	$username[1] = array_merge( $username[1], $username2[1] );
+	$username[1] = @array_merge( $username[1], $username2[1] );
 	
 	// Make sure there's only one instance of each username
 	if ( ! $usernames = array_unique( $usernames[1] ) )
