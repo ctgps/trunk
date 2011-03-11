@@ -1106,7 +1106,7 @@ function si_captcha_captcha_html($label = 'si_image', $form_id = 'com') {
      }
   }
   echo '    <div id="si_refresh_'.$form_id.'">'."\n";
-  echo '<a href="#" rel="nofollow" title="';
+  echo '<a href="javascript:void(0)" rel="nofollow" title="';
   echo ($si_captcha_opt['si_captcha_tooltip_refresh'] != '') ? esc_attr( $si_captcha_opt['si_captcha_tooltip_refresh'] ) : esc_attr(__('Refresh Image', 'si-captcha'));
   if($capt_disable_sess) {
     echo '" onclick="si_captcha_refresh(\''.$label.'\',\''.$form_id.'\',\''.$si_audio_type.'\',\''.$securimage_url.'\',\''.$securimage_show_rf_url.'\'); return false;">'."\n";
