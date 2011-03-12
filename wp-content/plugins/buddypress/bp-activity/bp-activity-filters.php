@@ -148,6 +148,7 @@ add_filter( 'pre_comment_content',                'bp_activity_at_name_filter' )
 add_filter( 'group_forum_topic_text_before_save', 'bp_activity_at_name_filter' );
 add_filter( 'group_forum_post_text_before_save',  'bp_activity_at_name_filter' );
 add_filter( 'bp_activity_comment_content',        'bp_activity_at_name_filter' );
+add_filter( 'the_content',                        'bp_activity_at_name_filter' );
 
 function bp_activity_make_nofollow_filter( $text ) {
 	return preg_replace_callback( '|<a (.+?)>|i', 'bp_activity_make_nofollow_filter_callback', $text );
