@@ -25,7 +25,7 @@
 				</div>
 
 			<?php endwhile; endif; ?>
-
+            <?php comments_template(); ?>
 		</div><!-- .page -->
 
 		<?php do_action( 'bp_after_blog_page' ) ?>
