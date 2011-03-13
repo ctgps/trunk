@@ -132,7 +132,9 @@
 							</p>
 
 						<?php endif; ?>
-
+						<div class="comment-action">
+							<?php do_action( 'comment_form', $post->ID ); ?>
+						</div>
 						<p class="form-textarea">
 							<label for="comment"><?php _e('Comment', 'buddypress'); ?></label>
 							<textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea>
@@ -140,15 +142,13 @@
 
 						<?php do_action( 'bp_blog_comment_form' ) ?>
 
+
+
+
 						<p class="form-submit">
 							<input class="submit-comment button" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit', 'buddypress'); ?>" />
 							<?php comment_id_fields(); ?>
 						</p>
-
-						<div class="comment-action">
-							<?php do_action( 'comment_form', $post->ID ); ?>
-						</div>
-
 					</form>
 
 					<?php do_action( 'bp_after_blog_comment_form' ) ?>
