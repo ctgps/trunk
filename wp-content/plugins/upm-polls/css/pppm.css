@@ -1,0 +1,158 @@
+/* CSS Document */
+.pppm_updated {
+background-color: #ffffe0;
+border-color: #e6db55;
+border-width: 1px;
+border-style: solid;
+padding: 0 0.6em;
+margin: 5px 15px 2px;
+-moz-border-radius: 3px;
+-khtml-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+line-height: 1;
+}
+.pppm_top_desc {
+font-size:15px;
+font-family:Georgia, "Times New Roman", Times, serif;
+color:#666666;
+}
+.pppm_box_table {
+background-color:#F0F0F0;
+}
+.pppm_box_th {
+background-color:#F9F9F9;
+text-align:left;
+font-weight:100;
+font-size:13px;
+padding:6px;
+}
+.pppm_box_td {
+background-color:#FFFFFF;
+text-align:left;
+font-weight:100;
+font-size:13px;
+padding:6px;
+line-height:16px;
+vertical-align:top;
+}
+.pppm_admin_desc {
+font-size:13px;
+font-style:italic;
+color:#666666;
+}
+.pppm_admin_desc_small {
+font-size:11px;
+font-style:italic;
+color:#666666;
+}
+.pppm_option_table {
+background-color:#CCCCCC;
+}
+.pppm_option_th {
+background-color:#F9F9F9;
+text-align:left;
+font-weight:100;
+padding:6px;
+width:60%;
+}
+.pppm_option_td {
+background-color:#F9F9F9;
+text-align:left;
+font-weight:100;
+padding:6px;
+width:40%;
+}
+.pppm_option_top_th {
+background-color:#F0F0F0;
+text-align:left;
+font-weight:bold;
+padding:8px;
+width:60%;
+}
+.pppm_option_top_td {
+background-color:#F0F0F0;
+text-align:left;
+font-weight:bold;
+padding:8px;
+width:40%;
+}
+.pppm_tag_table {
+background-color:#F0F0F0;
+}
+.pppm_tag_table_td {
+background-color:#FFFFFF;
+padding:1px;
+text-align:left;
+font-size:12px;
+color:#666666;
+}
+.pppm_protocol_table_td {
+background-color:#FFFFFF;
+padding:1px;
+text-align:left;
+font-size:12px;
+width:25%;
+color:#666666;
+}
+.pppm_table_td {
+background-color:#FBFBFB;
+padding:10px;
+text-align:left;
+}
+.pppm_box_desc {
+text-align:left;
+padding:10px;
+padding-left:3px;
+background:#F5F5F5		
+}
+.pppm_box_desc_button {
+text-align:left;
+padding:1px;
+background:#F5F5F5;	
+}
+.pppm_box_tag_example {
+padding:5px;
+font-family:courier new;
+background-color:#FFFFFF;
+color:#616161;
+}
+.pppm_option_allow {
+background-color:#FBFBFB;
+}
+.pppm_option_disallow {
+background-color:#FFD7D7;
+}
+.pppm_link_button_activ {
+text-align:center;
+padding:5px;
+font-weight:bold;
+padding-left:3px;
+background:#F5F5F5;
+}
+.pppm_link_button_inactiv {
+text-align:center;
+padding:7px;
+font-weight:100;
+padding-left:3px;
+background:#FFFFFF;
+}
+.pppm_tagbox_link{
+text-decoration:none;
+}
+.pppm_small_font {
+font-size:11px;
+}
+.pppm_medium_font {
+font-size:13px;
+}
+.pppm_normal_font {
+font-size:14px;
+}
+.pppm_big_font {
+font-size:16px;
+}
+
+/* UPM POLL */
+
+

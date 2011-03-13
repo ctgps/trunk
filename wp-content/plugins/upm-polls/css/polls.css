@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* UPM POLLS */
+.upm_poll_form_question {
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	padding-bottom:10px;
+}
+.upm_poll_form_list{
+	padding:10px 0px;
+}
+.upm_poll_ul li{
+	list-style:none;
+	list-style-image:none;
+}
+.poll_submit{
+	text-align:center;
+}
+.upm_poll_form_label{
+	cursor:pointer;
+}
+.upm_polls{
+	padding:10px 0px;
+}
+.upm_polls input{
+	background:transparent;
+}
+.upm_poll_form_submit{
+	border:#999999 1px solid;
+	background:#FFFFFF;
+	font-size:13px;
+	cursor:pointer;
+	margin-top:10px;
+}
+.upm_poll_footer{
+	text-align:center;
+	padding-top:10px;
+}
+.upm_poll_result_text{
+	font-size:10px;
+	color:#666666;
+}
+.upm_next_poll{
+	text-decoration:none;
+}
