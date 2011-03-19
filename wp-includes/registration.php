@@ -100,7 +100,7 @@ function validate_username( $username ) {
  * @param array $userdata An array of user data.
  * @return int|WP_Error The newly created user's ID or a WP_Error object if the user could not be created.
  */
-function wp_insert_user($userdata) {
+function wp_insert_user($userdata) { 
 	global $wpdb;
 
 	extract($userdata, EXTR_SKIP);

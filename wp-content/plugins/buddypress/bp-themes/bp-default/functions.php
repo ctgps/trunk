@@ -1,5 +1,11 @@
 <?php
 
+
+// Add nav menu support
+register_nav_menus(array(
+	'primary' => '主菜单'
+));
+
 // Stop the theme from killing WordPress if BuddyPress is not enabled.
 if ( !class_exists( 'BP_Core_User' ) )
 	return false;
@@ -62,7 +68,7 @@ function bp_dtheme_blog_comments( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>">
 		<div class="comment-avatar-box">
-			<div class="avb">
+			<div class="avb">		    
 				<a href="<?php echo get_comment_author_url() ?>" rel="nofollow">
 					<?php if ( $comment->user_id ) : ?>
 						<?php echo bp_core_fetch_avatar( array( 'item_id' => $comment->user_id, 'width' => 50, 'height' => 50, 'email' => $comment->comment_author_email ) ); ?>
@@ -76,6 +82,7 @@ function bp_dtheme_blog_comments( $comment, $args, $depth ) {
 		<div class="comment-content">
 
 			<div class="comment-meta">
+			<!-- 错误的代码 <span>#<?php $i--; ?>楼&nbsp;</span> -->
 				<a href="<?php echo get_comment_author_url() ?>" rel="nofollow"><?php /*echo get_comment_author(); */ echo get_comment_author_link(); ?></a> <?php _e( 'said:', 'buddypress' ) ?>
 				<em><?php _e( 'On', 'buddypress' ) ?> <a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date() ?></a></em>
 			</div>
@@ -85,7 +92,7 @@ function bp_dtheme_blog_comments( $comment, $args, $depth ) {
 			<?php endif; ?>
 
 			<?php comment_text() ?>
-
+<?php //do_action("comment_text");?>
 			<div class="comment-options">
 				<?php echo comment_reply_link( array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ?>
 				<?php edit_comment_link( __( 'Edit' ),'','' ); ?>

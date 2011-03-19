@@ -31,8 +31,11 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-		<?php wp_head(); ?>
 
+		<?php wp_head(); ?>
+		<script type='text/javascript' src='<?php echo get_home_url()?>/wp-includes/js/jquery/ui.core.js'></script> 
+<script type='text/javascript' src='<?php echo get_home_url()?>/wp-includes/js/jquery/ui.tabs.js'></script>
+ 
 	</head>
 
 	<body <?php body_class() ?> id="bp-default">
@@ -42,20 +45,21 @@
 		<div id="header">
 
 			<h1 id="logo"><a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php bp_site_name() ?></a></h1>
-
+		    <?php //wp_nav_menu(); ?>
 			<ul id="nav">
 				<li<?php if ( bp_is_front_page() ) : ?> class="selected"<?php endif; ?>>
 					<a href="<?php echo site_url() ?>" title="<?php _e( 'Home', 'buddypress' ) ?>"><?php _e( 'Home', 'buddypress' ) ?></a>
 				</li>
-
-				<?php if ( 'activity' != bp_dtheme_page_on_front() && bp_is_active( 'activity' ) ) : ?>
-					<li<?php if ( bp_is_page( BP_ACTIVITY_SLUG ) ) : ?> class="selected"<?php endif; ?>>
-						<a href="<?php echo site_url() ?>/<?php echo BP_ACTIVITY_SLUG ?>/" title="<?php _e( 'Activity', 'buddypress' ) ?>"><?php _e( 'Activity', 'buddypress' ) ?></a>
-					</li>
-				<?php endif; ?>
+				
+				
+				<?php wp_list_pages( 'title_li=&depth=1&include=17'); //票务系统 ?>
+				
+			
+				<?php wp_list_pages( 'title_li=&depth=1&include=20'); //搜狐相册 ?>
+				
 
 				<li<?php if ( bp_is_page( BP_MEMBERS_SLUG ) || bp_is_member() ) : ?> class="selected"<?php endif; ?>>
-					<a href="<?php echo site_url() ?>/<?php echo BP_MEMBERS_SLUG ?>/" title="<?php _e( 'Members', 'buddypress' ) ?>"><?php _e( 'Members', 'buddypress' ) ?></a>
+					<a href="<?php echo site_url() ?>/<?php echo BP_MEMBERS_SLUG ?>/" title="<?php _e( 'Members', 'buddypress' ) ?>">通讯录</a>
 				</li>
 
 				<?php if ( bp_is_active( 'groups' ) ) : ?>
@@ -76,15 +80,24 @@
 					</li>
 				<?php endif; ?>
 
-				<?php wp_list_pages( 'title_li=&depth=1&exclude=' . bp_dtheme_page_on_front() ); ?>
-
-				<?php do_action( 'bp_nav_items' ); ?>
+				<?php //wp_list_pages( 'title_li=&depth=1&exclude=' . bp_dtheme_page_on_front() ); 
+				wp_list_categories( 'title_li=&hide_empty=0&include=8'); //选课指南
+				 ?>
+				
+                <?php if ( 'activity' != bp_dtheme_page_on_front() && bp_is_active( 'activity' ) ) : ?>
+					<li<?php if ( bp_is_page( BP_ACTIVITY_SLUG ) ) : ?> class="selected"<?php endif; ?>>
+						<a href="<?php echo site_url() ?>/<?php echo BP_ACTIVITY_SLUG ?>/" title="<?php _e( 'Activity', 'buddypress' ) ?>">站内动态</a>
+					</li>
+				<?php endif; ?>
+				<?php  wp_list_pages( 'title_li=&depth=1&include=14'); //留言板?>
+				<?php  wp_list_pages( 'title_li=&depth=1&include=2'); //关于同乡会?>
+				 
 			</ul><!-- #nav -->
 
 			<div id="search-bar">
 				<div class="padder">
-
-				<?php if ( bp_search_form_enabled() ) : ?>
+            <?php  get_search_form(); ?>
+				<?php if ( /*bp_search_form_enabled()*/ false ) : ?>
 
 					<form action="<?php echo bp_search_form_action() ?>" method="post" id="search-form">
 						<input type="text" id="search-terms" name="search-terms" value="" />

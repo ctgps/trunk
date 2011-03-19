@@ -38,7 +38,7 @@ a:focus { outline: 1px dotted #ccc; }
 .padder { padding: 19px; }
 .clear { clear: left; }
 
-p {	margin-bottom: 15px; }
+p {	margin-bottom: 15px; font-size: 13px; }
 p:last-child { margin-bottom: 0; }
 
 hr {
@@ -386,6 +386,10 @@ div#item-header {
 		line-height: 80%;
 	}
 
+
+    div.widget ul li ul.children {
+        margin-left: 4px;
+    }
 
 /* > Item Lists (Activity, Friend, Group lists)
 -------------------------------------------------------------- */
@@ -1565,7 +1569,7 @@ div.post {
 	.navigation, .paged-navigation, .comment-navigation {
 		overflow: hidden;
 		font-family: georgia, times, serif;
-		font-style: italic;
+		/* font-style: italic; */
 		font-size: 14px;
 		padding: 5px 0;
 		margin: 5px 0 25px 0;
@@ -1600,7 +1604,7 @@ div.post {
 	div.post code { font-family: "Monaco", courier, sans-serif; }
 	div.post blockquote {
 		quotes: none;
-		font-style:italic;
+		/* font-style:italic; */
 		padding:0 3em;
 		font-family: georgia, times, serif;
 		font-size: 16px;
@@ -1621,7 +1625,7 @@ div.post {
 		float: left;
 		margin: 0 15px 15px 0;
 		font-family: georgia, times, serif;
-		font-style: italic;
+		/* font-style: italic; */
 		text-align: center;
 		width: 70px;
 		-moz-border-radius: 3px;
@@ -1761,3 +1765,55 @@ ol.commentlist li {
 	#footer a {
 		color: #bbb;
 	}
+
+
+/* > CTGPS home page
+-------------------------------------------------------------- */
+div.category-latest{
+border: 2px dashed #aaa;
+padding: 4px;
+background:#fff;
+}
+
+div.category-latest th{
+display:none;
+}
+
+div.category-latest h2{
+background:#eee;
+font-size:20px;
+margin:0;
+line-height:25px;
+}
+
+div.category-latest h2 a{
+text-decoration:none;
+float:right;
+font-size: 15px;
+}
+
+div.category-latest li{
+list-style:none;
+border-bottom:1px solid #eee;
+margin-left: 4px;
+line-height:17px;
+font-size: 15px;
+}
+
+
+
+div.category-latest li span.author{
+float:right;
+margin-right: 8px;
+}
+
+div#comments span{
+font-size: 15px;
+margin-left:20px;
+}
+
+div.slideshow {
+text-align:center;
+margin:0 auto;
+width:650px;
+}

@@ -14,8 +14,9 @@
 			<p>请输入您的真实信息,以便确认身份,本站不接受外部注册.</p>
 			<p>新生的帐号信息将在整理后统一导入,请蛋定!</p>
 			<p>研究生由于人数较少,而且比较分散,资料没有统一收集,请骚扰管理猿进行登记!不便之处,敬请见谅!</p>
-			<pre><?php global $bp; print_r( $bp->signup->error )?></pre>
-			
+			<?php  global $bp; if ( $bp->signup->error!="" ): ?> 
+			<div id="message"><p><?php echo( $bp->signup->error )?></p></div>
+			<?php  endif;?>
 			
 			<label for="signup_username">真实姓名</label>
 			<input type="text" name="signup_username" id="signup_username" " />
@@ -43,6 +44,7 @@
 				 -->
 			
 				<p>注意填写正确的邮箱地址! 忘记用户名密码时可以通过邮箱自助修改.</p>
+				<p>系统支持用户名/真实姓名/邮箱3种方式登陆.</p>
 				<?php do_action( 'bp_before_account_details_fields' ) ?>
 
 				<div class="register-section" id="basic-details-section">
@@ -51,7 +53,7 @@
 
 					<h4><?php _e( 'Account Details', 'buddypress' ) ?></h4>
 
-					<label for="signup_username"><?php _e( 'Username', 'buddypress' ) ?> <?php _e( '(required)', 'buddypress' ) ?></label>
+					<label for="signup_username"><?php _e( 'Username', 'buddypress' ) ?> <?php _e( '(required)', 'buddypress' ) ?>(只接受字母数字,建议用学校的netID)</label>
 					<?php do_action( 'bp_signup_username_errors' ) ?>
 					<input type="text" name="signup_username" id="signup_username" value="" />
 
@@ -90,10 +92,11 @@
 
 								<?php if ( 'textbox' == bp_get_the_profile_field_type() ) : ?>
 
-									<label for="<?php bp_the_profile_field_input_name() ?>"><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'buddypress' ) ?><?php endif; ?></label>
+									<label for="<?php bp_the_profile_field_input_name() ?>"<?php  if ( "E-mail" == bp_get_the_profile_field_name() ) { echo 'style="display:none"'; } ?> ><?php bp_the_profile_field_name() ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php _e( '(required)', 'buddypress' ) ?><?php endif; ?></label>
 									<?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ) ?>
 									<input type="text" name="<?php bp_the_profile_field_input_name() ?>" id="<?php bp_the_profile_field_input_name() ?>" value="<?php bp_the_profile_field_edit_value() ?>" 
-                                     <?php  if ( "姓名" == bp_get_the_profile_field_name() ) {  global $bp; $bp->signup->realname=bp_get_the_profile_field_edit_value(); echo 'readonly="readonly"';} ?>		/>
+                                     <?php  if ( "姓名" == bp_get_the_profile_field_name() ) {  global $bp; $bp->signup->realname=bp_get_the_profile_field_edit_value(); echo 'readonly="readonly"';}
+                                            else if ( "E-mail" == bp_get_the_profile_field_name() ) { echo 'style="display:none"'; }  ?>		/>
 
 								<?php endif; ?>
 

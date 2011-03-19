@@ -32,41 +32,52 @@ function bp_core_screen_signup() {
 	    
 	    if ( $bp->signup->uid  ){
 	        $bp->signup->uid = $bp->signup->uid->ID;
+	        $sql =$wpdb->prepare( "select user_pass from {$wpdb->users} where ID=%d",$bp->signup->uid );
+	        $result = $wpdb->get_var( $sql );
+	        if ( $result !="" ){
+	            $bp->signup->error = "该会员已激活!";
+	        }else{
+        	    $user = BP_XProfile_Group::get( array(
+        			'profile_group_id' => 1,
+        			'user_id' => $bp->signup->uid,
+        			'fetch_fields' => true,
+        			'fetch_field_data' => true
+        		) );
+        		
+        		if ( $user ){
+        		    $user = $user[0];
+        		    $grade = NULL; 
+        		    
+        		    foreach ( $user->fields as $field )
+        		    {
+        		        if ( $field->name == '年级'){
+        		            $grade = $field->data->value;
+        		            break;
+        		        }
+        		    }
+        		}
+        		
+        	    if ( $_POST['signup_grade'] == $grade ) {
+        	       $bp->signup->step = 'request-details';
+        	       $bp->displayed_user->id = $bp->signup->uid;
+        	    }
+        	    else {
+        	        $bp->signup->error ="未找到符合条件的会员!";
+        	    }
+	        }
+	    }else{
+	       $bp->signup->error = "未找到符合条件的会员!";
 	    }
 	    
-	    $user = BP_XProfile_Group::get( array(
-			'profile_group_id' => 1,
-			'user_id' => $bp->signup->uid,
-			'fetch_fields' => true,
-			'fetch_field_data' => true
-		) );
-		
-		if ( $user ){
-		    $user = $user[0];
-		    $grade = NULL; 
-		    
-		    foreach ( $user->fields as $field )
-		    {
-		        if ( $field->name == '年级'){
-		            $grade = $field->data->value;
-		            break;
-		        }
-		    }
-		}
-		
-	    if ( $_POST['signup_grade'] == $grade ) {
-	       $bp->signup->step = 'request-details';
-	       $bp->displayed_user->id = $bp->signup->uid;
-	    }
-	    else {
-	        $bp->signup->error ="未找到符合条件的会员!";
-	    }
+
 	
 
 	}
 	/* If the signup page is submitted, validate and save */
 	if ( isset( $_POST['signup_submit'] ) ) {
-
+        //TODO 连接系统email和bp的E-mail域,应该有更好的解决方案
+		$bp->signup->step = 'request-details';
+	    $_POST['field_15'] = $_POST['signup_email']; 
 		/* Check the nonce */
 		check_admin_referer( 'bp_new_signup' );
 
@@ -181,7 +192,7 @@ function bp_core_screen_signup() {
 				if ( isset( $_POST['signup_with_blog'] ) && bp_core_is_multisite() )
 					bp_core_signup_blog( $blog_details['domain'], $blog_details['path'], $blog_details['blog_title'], $_POST['signup_username'], $_POST['signup_email'], $usermeta );
 				else {
-					bp_core_signup_user( $_POST['signup_username'], $_POST['signup_password'], $_POST['signup_email'], $usermeta );
+					bp_core_signup_user( $_POST['signup_username'], $_POST['signup_password'], $_POST['signup_email'], $usermeta ); 
 				}
 
 				$bp->signup->step = 'completed-confirmation';
@@ -380,18 +391,23 @@ function bp_core_signup_user( $user_login, $user_password, $user_email, $usermet
 
 	} else {
 		$errors = new WP_Error();
-
-		$user_id = wp_update_user( array(
-		    'ID' =>    $_POST['signup_uid'], // update instead of insert user
-			//'user_login' => $user_login,   wp_update_user wouldn't modify this field
-			'user_pass' => $user_password,
+        $ID =  $_POST['signup_uid'];  
+		// you have to update user_login mamually before wp_insert_user
+		// because user should have a user_login in normal wp system
+        $wpdb->update( $wpdb->users, array('user_login' => $user_login ),
+        							 array('ID'  => $ID ) );
+		$user_id = wp_insert_user( array(
+		    'ID' =>    $ID, // update instead of insert user
+			'user_login' => $user_login,   
+			'user_pass' => wp_hash_password($user_password),
 		    'user_nicename' => $usermeta['field_1'],
 			//'display_name' => sanitize_title( $user_login ),
-			'user_email' => $user_email
+			'user_email' => $user_email,
 		) );
-		// you have to update user_login mamually 
-        $wpdb->update( $wpdb->users, array('user_login' => $user_login ),
-        							 array('ID'  => $_POST['signup_uid']) );
+		
+		$user = new WP_User($ID);
+		$user->set_role(get_option('default_role'));
+		
 		if ( is_wp_error( $user_id ) || !$user_id ) {
 			$errors->add( 'registerfail', sprintf( __('<strong>ERROR</strong>: Couldn&#8217;t register you... please contact the <a href="mailto:%s">webmaster</a> !', 'buddypress' ), get_option( 'admin_email' ) ) );
 			return $errors;
