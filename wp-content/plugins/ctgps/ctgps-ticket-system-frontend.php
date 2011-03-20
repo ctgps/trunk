@@ -3,7 +3,7 @@
 function ctgps_init_jquery_ui(){
    /*if (is_single() )*/
 ?>
-  	<link rel="stylesheet" href="http://jqueryui.com/demos/demos.css">
+  	
   <link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css">
 <script type='text/javascript' src='<?php echo get_home_url()?>/wp-includes/js/jquery/ui.core.js'></script> 
 <script type='text/javascript' src='<?php echo get_home_url()?>/wp-includes/js/jquery/ui.tabs.js'></script>
