@@ -20,6 +20,11 @@ $numPosts = 0;
 ?>
 </div>
 <h2>最新文章</h2>
+<?php 
+//TODO find the better way to filter the courses-guideline 
+global $wp_query;
+$wp_query = new WP_Query( 'cat=-8,-9,-10&order=DESC&orderby=date&limit=1,5');
+?>
 			<?php if ( have_posts() ) : ?>
 
 				<?php while (have_posts()) : the_post(); ?>
@@ -109,25 +114,25 @@ padding:0;
 }
 </style>
 		<div class="category-latest">
-			<h2>新闻中心<a href="<?php echo get_category_link(10); ?>">更多...</a></h2>
+			<h2>新闻中心<a href="<?php echo get_category_link(3); ?>">更多...</a></h2>
 
-			<?php ctgps_list_latest5_of_a_category("cat=10");?>
+			<?php ctgps_list_latest5_of_a_category("cat=3");?>
 		
 		</div>
 	    
 	    <div class="category-latest">
-			<h2>我的大学<a href="<?php echo get_category_link(6); ?>">更多...</a></h2>			
-			<?php ctgps_list_latest5_of_a_category("cat=6");?>
+			<h2>我的大学<a href="<?php echo get_category_link(4); ?>">更多...</a></h2>			
+			<?php ctgps_list_latest5_of_a_category("cat=4");?>
 		</div>
 		
 	    <div class="category-latest">
-			<h2>校园生活<a href="<?php echo get_category_link(7); ?>">更多...</a></h2>
-			<?php ctgps_list_latest5_of_a_category("cat=7");?>
+			<h2>校园生活<a href="<?php echo get_category_link(5); ?>">更多...</a></h2>
+			<?php ctgps_list_latest5_of_a_category("cat=5");?>
 		</div>
 		
 		<div class="category-latest">
-			<h2>新生指南<a href="<?php echo get_category_link(8); ?>">更多...</a></h2>
-			<?php ctgps_list_latest5_of_a_category("cat=8");?>
+			<h2>新生指南<a href="<?php echo get_category_link(6); ?>">更多...</a></h2>
+			<?php ctgps_list_latest5_of_a_category("cat=6");?>
 		</div>
 	    <div style="clear:both" ></div>
 	    <?php wp_reset_postdata(); ?>
