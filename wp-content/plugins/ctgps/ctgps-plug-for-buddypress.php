@@ -7,9 +7,12 @@ Version: 0.0.1
 Author: Dinosoft dinosoft@qq.com
 */
 
-add_filter("bp_core_signup_send_activation_key", function() {return false;}, 999 );
+function ctgps_return_false(){
+return false;
+}
+add_filter("bp_core_signup_send_activation_key", 'ctgps_return_false', 999 );
 
-add_filter( 'bp_registration_needs_activation', function() {return false;}, 999  );
+add_filter( 'bp_registration_needs_activation', 'ctgps_return_false', 999  );
 
 	
 /**
