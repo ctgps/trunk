@@ -114,7 +114,7 @@ if(!class_exists('silver_smilies'))
 
             {
                 ++$num;
-                echo "<img src='{$this->img_path}/{$value['filename']}.{$value['extension']}' alt='{$value['filename']}' style='cursor:pointer;width=24px;height:24px;' onclick='return inface(\"{$value['filename']}\");'>";
+                echo "<img src='{$this->img_path}/{$value['filename']}.{$value['extension']}' alt='{$value['filename']}' style='cursor:pointer;width=50px;height50px;margin:2px' onclick='return inface(\"{$value['filename']}\");'>";
                 if ( $num % 25 == 0 ) echo "<br/>";
 
             }
