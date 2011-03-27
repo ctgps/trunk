@@ -126,7 +126,7 @@ function bp_activity_setup_nav() {
 		bp_core_new_subnav_item( array( 'name' => __( 'Groups', 'buddypress' ), 'slug' => BP_GROUPS_SLUG, 'parent_url' => $activity_link, 'parent_slug' => $bp->activity->slug, 'screen_function' => 'bp_activity_screen_groups', 'position' => 30, 'item_css_id' => 'activity-groups' ) );
 
 	bp_core_new_subnav_item( array( 'name' => __( 'Favorites', 'buddypress' ), 'slug' => 'favorites', 'parent_url' => $activity_link, 'parent_slug' => $bp->activity->slug, 'screen_function' => 'bp_activity_screen_favorites', 'position' => 40, 'item_css_id' => 'activity-favs' ) );
-	bp_core_new_subnav_item( array( 'name' => sprintf( __( '@%s Mentions', 'buddypress' ), $user_login ), 'slug' => 'mentions', 'parent_url' => $activity_link, 'parent_slug' => $bp->activity->slug, 'screen_function' => 'bp_activity_screen_mentions', 'position' => 50, 'item_css_id' => 'activity-mentions' ) );
+	bp_core_new_subnav_item( array( 'name' => sprintf( __( '@%s Mentions', 'buddypress' ), bp_get_loggedin_user_fullname()), 'slug' => 'mentions', 'parent_url' => $activity_link, 'parent_slug' => $bp->activity->slug, 'screen_function' => 'bp_activity_screen_mentions', 'position' => 50, 'item_css_id' => 'activity-mentions' ) );
 
 	if ( $bp->current_component == $bp->activity->slug ) {
 		if ( bp_is_my_profile() ) {
