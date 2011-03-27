@@ -1,0 +1,86 @@
+.share-list-item{
+	width:16%;
+	float:left !important;
+}
+.share-list-item div {
+
+	margin:5px 0px;
+}
+.share-list-icon{
+	width:40px;height:40px;
+	display:block;
+	margin:0px auto;
+	background:url(../images/shareList.png) 0px 0px no-repeat;
+}
+.multiple-select{
+	width:100%;
+	height:250px !important;
+}
+#share-list-admin-btns{
+	margin-top:10px;
+	line-height:32px;
+}
+
+#add-site-header{
+	padding-bottom:5px;
+	margin-bottom:10px;
+	margin-top:0px;
+	border-bottom:#CCC 1px solid;
+}
+#add-site-header p{padding-top:10px;color:#999;}
+#share-list-admin-btns input,.submit-btn{
+	border:1px solid #E3E3E3;
+	padding:6px;
+	background-color:#FFFFFF;
+	cursor:pointer;
+	color:#21759B;
+}
+#share-list-admin-btns input:hover,.submit-btn:hover{
+	border:1px solid #21759B !important;
+
+}
+.submit-btn{
+	padding:6 20px !important;
+	font-size:16px;
+}
+.bor-b-b{
+	padding-bottom:10px;
+	border-bottom:1px solid #E3E3E3;
+}
+#share-list-form td{
+	padding:6px;
+}
+.input-text{
+	padding:6px;
+	width:230px;
+}
+
+#sites span.icon-zhuaxia{background-position:left -46px;}
+#sites span.icon-xianguo{background-position:left -93px;}
+#sites span.icon-qqshuqian{background-position:left -143px;}
+#sites span.icon-favorite{background-position:left -192px;}
+#sites span.icon-greader{background-position:left -244px;}
+#sites span.icon-baiducang{background-position:left -298px;}
+#sites span.icon-delicious{background-position:left -353px;}
+
+#sites span.icon-digu{background-position:-50px 0px;}
+#sites span.icon-zuosa{background-position:-50px -47px;}
+#sites span.icon-sinaminiblog{background-position:-50px -94px;}
+#sites span.icon-twitter{background-position:-50px -143px;}
+#sites span.icon-renjian{background-position:-50px -192px;}
+#sites span.icon-gbuzz{background-position:-50px -242px;}
+#sites span.icon-tsohu{background-position:-50px -298px;}
+#sites span.icon-vtqq{background-position:-50px -353px;}
+
+#sites span.icon-douban{background-position:-101px 0px;}
+#sites span.icon-renren{background-position:-101px -46px;}
+#sites span.icon-kaixin001{background-position:-101px -93px;}
+#sites span.icon-sohubai{background-position:-101px -142px;}
+#sites span.icon-friendfeed{background-position:-101px -190px;}
+#sites span.icon-facebook{background-position:-101px -242px;}
+#sites span.icon-qqzone{background-position:-101px -298px;}
+#sites span.icon-tao{background-position:-101px -353px;}
+
+#sites span.icon-feerbook{background-position:0px -519px;}
+#sites span.icon-chouti{background-position:0px -408px;}
+#sites span.icon-diglog{background-position:0px -463px;}
