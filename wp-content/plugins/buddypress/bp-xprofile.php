@@ -177,7 +177,14 @@ function xprofile_setup_nav() {
 	bp_core_new_subnav_item( array( 'name' => __( 'Public', 'buddypress' ), 'slug' => 'public', 'parent_url' => $profile_link, 'parent_slug' => $bp->profile->slug, 'screen_function' => 'xprofile_screen_display_profile', 'position' => 10 ) );
 	bp_core_new_subnav_item( array( 'name' => __( 'Edit Profile', 'buddypress' ), 'slug' => 'edit', 'parent_url' => $profile_link, 'parent_slug' => $bp->profile->slug, 'screen_function' => 'xprofile_screen_edit_profile', 'position' => 20 ) );
 	bp_core_new_subnav_item( array( 'name' => __( 'Change Avatar', 'buddypress' ), 'slug' => 'change-avatar', 'parent_url' => $profile_link, 'parent_slug' => $bp->profile->slug, 'screen_function' => 'xprofile_screen_change_avatar', 'position' => 30 ) );
-
+    	
+	/*TODO to find a better solution!
+	 * If you use Chinese nicename, you'll be redirected to root when you visit some urls like
+	 * www.domain.com/members/NAME/profile/edit/, but append "group/1" at the last(no ended slash!!)
+	 * can fix it. Not a prefect solution, I know, but it works.
+	*/
+	$bp->bp_options_nav[$bp->profile->slug]['edit']['link']	= $bp->bp_options_nav[$bp->profile->slug]['edit']['link'].'group/1';
+	 
 	if ( $bp->current_component == $bp->profile->slug ) {
 		if ( bp_is_my_profile() ) {
 			$bp->bp_options_title = __( 'My Profile', 'buddypress' );
