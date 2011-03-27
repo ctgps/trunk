@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+     <url>
+	  <loc>http://localhost/ctgps/</loc>
+	  <lastmod>2011-03-27</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/%e9%81%97%e4%bc%a0%e4%b8%8e%e7%96%be%e7%97%85/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/%e5%a4%a7%e5%ad%a6%e8%8b%b1%e8%af%ad%ef%bc%88%e9%ab%98%e7%ba%a7%e8%8b%b1%e8%af%ad%e8%a7%86%e5%90%ac%e8%af%b4%ef%bc%89/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/warning/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/sohu-photo-ablum/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/ticket-system/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/guestbook/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/connect-to-sohu-photo-album/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/photo-upload-guideline/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/course-ranking/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/hello-world/</loc>
+	  <lastmod>2011-03-19</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+
+     <url>
+	  <loc>http://localhost/ctgps/about/</loc>
+	  <lastmod>2011-03-20</lastmod>
+	  <changefreq>weekly</changefreq>
+	  <priority>0.5</priority>
+     </url>
+</urlset>
