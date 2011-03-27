@@ -1,0 +1,345 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MP-Ukagaka Español\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-12 16:08+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ariagle <lariagle@gmail.com>\n"
+"Language-Team: Galden (Creator/China) / Verónica Fénix (Traductor/Spain) www.verofenix.es <lariagle@gmail.com (china) / verofenix@gmail.com (spain)>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../.\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: mp-ukagaka.php:49
+msgid "初音"
+msgstr "Hatsune"
+
+#: mp-ukagaka.php:51
+msgid "欢迎光临～"
+msgstr "Bienvenid@"
+
+#: mp-ukagaka.php:79
+msgid "更换春菜"
+msgstr "Reemplaza el ukagaka"
+
+#: mp-ukagaka.php:196
+#: options.php:162
+#: options_page1.php:3
+msgid "春菜们"
+msgstr "Ukagaka"
+
+#: mp-ukagaka.php:198
+msgid "没有可供选择的春菜"
+msgstr "Ukagaka no está disponible"
+
+#: mp-ukagaka.php:514
+#: mp-ukagaka.php:664
+msgid "隐藏春菜 ▼"
+msgstr "Esconder Icono ▼"
+
+#: mp-ukagaka.php:515
+#: mp-ukagaka.php:665
+msgid "隐藏会话 ▼"
+msgstr "Esconder Mensaje ▼"
+
+#: mp-ukagaka.php:516
+#: options.php:164
+#: options_page3.php:3
+msgid "扩展"
+msgstr "Extensión"
+
+#: mp-ukagaka.php:664
+msgid "显示春菜 ▲"
+msgstr "Mostrar Icono ▲"
+
+#: mp-ukagaka.php:665
+msgid "显示会话 ▲"
+msgstr "Mostrar Mensaje ▲"
+
+#: mp-ukagaka.php:687
+#: options.php:154
+msgid "MP Ukagaka 选项"
+msgstr "Preferencias de MP Ukagaka"
+
+#: options.php:24
+msgid "春菜"
+msgstr "Ukagaka"
+
+#: options.php:24
+msgid "已离你而去…"
+msgstr "Te dejo sólo..."
+
+#: options.php:26
+msgid "不存在此春菜哟"
+msgstr "Éste Ukagaka no existe. XD"
+
+#: options.php:30
+msgid "不允许赶走默认春菜哟"
+msgstr "No se puede borrar el Ukagaka por defecto"
+
+#: options.php:61
+#: options.php:100
+#: options.php:110
+msgid "设定已保存"
+msgstr "Preferencias Guardadas"
+
+#: options.php:75
+msgid "春菜们已经焕然一新啦"
+msgstr "Nuevo Look listo para los Ukagakas XD"
+
+#: options.php:91
+msgid "春菜创建成功～"
+msgstr "Ukagaka Creado"
+
+#: options.php:119
+msgid "设定已重置"
+msgstr "Preferencias Reiniciadas"
+
+#: options.php:121
+msgid "设定没有被重置"
+msgstr "Preferencias NO reiniciadas"
+
+#: options.php:160
+#: options_page0.php:3
+msgid "通用设置"
+msgstr "Preferencias Generales"
+
+#: options.php:161
+#: options_page4.php:3
+msgid "会话"
+msgstr "Message"
+
+#: options.php:163
+#: options_page2.php:3
+msgid "创建新春菜"
+msgstr "Crear Nuevo Ukagaka"
+
+#: options_page0.php:8
+msgid "默认春菜："
+msgstr "Ukagaka por Defecto:"
+
+#: options_page0.php:16
+msgid "默认显示春菜"
+msgstr "Set por Defecto: "
+
+#: options_page0.php:18
+msgid "默认显示对话框"
+msgstr "Mostrar Caja de Diálogo por Defecto"
+
+#: options_page0.php:21
+msgid "默认会话："
+msgstr "Conversación por Defecto:"
+
+#: options_page0.php:22
+#: options_page0.php:29
+msgid "随机吐槽"
+msgstr "Post Aleatorio"
+
+#: options_page0.php:23
+msgid "第一条吐槽"
+msgstr "Primer Post"
+
+#: options_page0.php:27
+msgid "会话顺序："
+msgstr "Secuencia de Conversaciones"
+
+#: options_page0.php:28
+msgid "顺序吐槽"
+msgstr "Post Secuencial"
+
+#: options_page0.php:33
+msgid "点击春菜："
+msgstr "Click Ukagaka:"
+
+#: options_page0.php:34
+msgid "下一条吐槽"
+msgstr "Siguiente Post"
+
+#: options_page0.php:35
+msgid "无操作"
+msgstr "No hacer Nada"
+
+#: options_page0.php:38
+msgid "使用自定义样式"
+msgstr "Usar Estilo Personalizado"
+
+#: options_page0.php:45
+msgid "HTML生成位置："
+msgstr "Localización de salida HTML:"
+
+#: options_page0.php:45
+msgid "一般情况下请不要更改它们"
+msgstr "No lo cambies en circunstancias generales"
+
+#: options_page0.php:47
+msgid "在< / body>前。"
+msgstr "antes de </body>"
+
+#: options_page0.php:47
+msgid "当春菜无法显示（主题尾部无wp_footer()函数）或wp_footer()所在之处使得春菜样式无法正常表示，请勾选此项"
+msgstr "Si no se muestra el Ukagaka (No hay wp_footer() en footer.php) o aparece de manera irregular debido a wp_footer(). Por favor, marca ésta opción."
+
+#: options_page0.php:49
+msgid "在wp_footer()处。"
+msgstr "en wp_footer()"
+
+#: options_page0.php:49
+msgid "这是WP常用的方式，但如果你的主题尾部没有wp_footer()函数那春菜将无法显示"
+msgstr "Esto se usa habitualmente en Wordpress. Pero si no tienes wp_footer() en el final de tu página (footer.php), el Ukagaka no se mostrará."
+
+#: options_page0.php:56
+msgid "不在以下页面显示春菜"
+msgstr "Do not display ukagaka on the following pages"
+
+#: options_page0.php:58
+msgid "输入不显示春菜的页面的URL，每行一条。"
+msgstr "Enter the URL of the page which you do not want to display ukagaka on, one URL per line."
+
+#: options_page0.php:59
+msgid "在地址尾部加入(*)可进行模糊匹配。"
+msgstr "Add (*) to the end of the url to reply the fuzzy matching."
+
+#: options_page0.php:64
+#: options_page1.php:38
+#: options_page3.php:21
+#: options_page4.php:24
+msgid " 保 存 "
+msgstr "Guardar"
+
+#: options_page0.php:70
+msgid "插件信息"
+msgstr "Información del Plug-in"
+
+#: options_page0.php:72
+msgid "版本："
+msgstr "Versión:"
+
+#: options_page0.php:74
+msgid "春菜数："
+msgstr "Número de Ukagaka: "
+
+#: options_page0.php:76
+msgid "平均会话："
+msgstr "Conversación Habitual:"
+
+#: options_page0.php:78
+msgid "插件首页："
+msgstr "Página del Plug-in:"
+
+#: options_page0.php:78
+#: options_page3.php:31
+msgid "访问插件首页"
+msgstr "Visita la página del Plug-in"
+
+#: options_page0.php:84
+msgid "重置设定"
+msgstr "Reinicia Ukagaka"
+
+#: options_page0.php:86
+msgid "确认重置"
+msgstr "¡¿Confirmar Reinicio?!"
+
+#: options_page0.php:88
+msgid "重置设定将还原插件的所有配置为默认设定，插件内的所有设定及春菜将被删除。该操作无法撤销，请慎重操作。"
+msgstr "Reiniciar Ukagaka reseteará todas las opciones por defecto, borrará todas las preferencias guardadas y los ukagakas creados desaparecerán. PRECAUCIÓN: ¡Ésta acción es irreversible! "
+
+#: options_page0.php:90
+msgid " 重 置 "
+msgstr "Reset"
+
+#: options_page1.php:6
+msgid "图片栏中，请图片填写完整的URL，不要忘记http://开头。"
+msgstr "En la columna de la imagen, por favor, escribe la URL completa, empieza con \"http://\""
+
+#: options_page1.php:8
+msgid "吐槽栏中，每行代表一条吐槽。可使用HTML代码。"
+msgstr "En la columna del post, una línea es un post. No soporta código HTML."
+
+#: options_page1.php:22
+msgid "删除"
+msgstr "Borrar"
+
+#: options_page1.php:26
+#: options_page2.php:7
+msgid "可显示"
+msgstr "Puede mostrarse"
+
+#: options_page1.php:28
+#: options_page2.php:9
+msgid "名字："
+msgstr "Nombre:"
+
+#: options_page1.php:30
+#: options_page2.php:11
+msgid "图片："
+msgstr "Imagen:"
+
+#: options_page1.php:32
+#: options_page2.php:13
+msgid "吐槽："
+msgstr "Post:"
+
+#: options_page2.php:13
+msgid "每行一条吐槽，可使用HTML代码。"
+msgstr "Un post por línea. No soporta código HTML."
+
+#: options_page2.php:15
+msgid " 创 建 "
+msgstr "Crear:"
+
+#: options_page3.php:5
+msgid "如果您不懂如何操作或编写代码，请不要更改此页。"
+msgstr "Si no estás seguro de cómo editar el código, por favor, NO cambies la página."
+
+#: options_page3.php:11
+msgid "JS区"
+msgstr "JavaScript"
+
+#: options_page3.php:14
+msgid "可在此填写JavaScript代码，为春菜自定义更多的响应事件。"
+msgstr "Escribe tu propio cóodigo JavaSccript para Ukagaka aquí, personaliza más actividades."
+
+#: options_page3.php:16
+msgid "无需使用&lt;script&gt;标签，代码将写入到&lt;head&gt;部分。"
+msgstr "NO uses \"&lt;script&gt;\", los códigos se escribirán en \"&lt;head&gt;\"."
+
+#: options_page3.php:25
+msgid "代码扩展"
+msgstr "Code Extension"
+
+#: options_page3.php:28
+msgid "你可以在春菜的信息框中使用特殊代码来显示特定的信息，例如日志列表。"
+msgstr "You can add our code in the massage box to display some special content, such as posts list."
+
+#: options_page3.php:30
+msgid "访问插件首页便可获得所有代码的信息："
+msgstr "Go to the homepage of this plugin to get the infomation of code:"
+
+#: options_page4.php:9
+msgid "固定信息："
+msgstr "Información Guardada: "
+
+#: options_page4.php:12
+msgid "此信息将显示在每条会话的后面，支持HTML代码。"
+msgstr "Ésta información se mostrará al final de cada conversación. No soporta código HTML."
+
+#: options_page4.php:17
+msgid "通用会话："
+msgstr "Common Message"
+
+#: options_page4.php:20
+msgid "所有春菜共用的会话内容。"
+msgstr "All ukagakas will use these messages instead of their default messages."
+
+#: options_page4.php:21
+msgid "一旦填写此栏，通用会话将取代每个春菜的自定义会话。清空此栏则使用各春菜的默认自定义会话。"
+msgstr "Keep it empty if you want to use the ukagakas' default message."
+
+#~ msgid " 提 交 "
+#~ msgstr "Enviar"

@@ -1,0 +1,82 @@
+/* mp-ukagaka */
+
+#mp_ukagaka .mpu-clear {
+	clear:both;
+	color:#FFFFFF;
+}
+
+#mp_ukagaka a {
+	color:#FFFFFF;
+}
+
+#ukagaka_shell {
+	font-size:12px;
+	margin:0 20px 0 0;
+	padding:0;
+	position:fixed;
+	right:0;
+	bottom:0;
+	float:right;
+	display:block;
+	z-index:501;
+}
+
+#ukagaka_img img:hover {
+	cursor:pointer;
+}
+
+#ukagaka {
+	position:relative;
+	float:right;
+	padding-right:10px;
+}
+
+#ukagaka_msgbox {
+	position:absolute;
+	color:#FFFFFF;
+	top:30px;
+	left:-242px;
+	width:250px;
+	min-height:50px;
+}
+
+.ukagaka-msgbox-border {
+	height:8px;
+	margin:-1px 6px 0 6px;
+	background:transparent url(images/msgbox_border.png) no-repeat scroll right 0;
+}
+
+#ukagaka_msg {
+	padding:7px 10px;
+	background:transparent url(images/ukagaka_bg.png) repeat scroll 0 0;
+	border:1px solid #595956;
+	border-bottom:none;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+#ukagaka_msg a {
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+
+#ukagaka_msg a:hover {
+	text-decoration:none;
+}
+
+.ukagaka-dock {
+	color:#FFFFFF;
+	/*width:200px;*/
+	float:right;
+	padding:5px 10px;
+	text-align:center;
+	background:transparent url(images/bar-bg.png) repeat-x scroll 0 0;
+	-moz-border-radius-topleft:8px;
+	-moz-border-radius-topright:8px;
+	-webkit-border-top-left-radius:8px;
+	-webkit-border-top-right-radius:8px;
+}
+
+.ukagaka-dock a {
+	color:#FFFFFF;
+}
