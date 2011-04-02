@@ -25,7 +25,12 @@ class CommentRatingFieldPlugin {
         add_action('comment_post', array(&$this, 'SaveRating')); // Save Rating Field
         add_action('comment_text', array(&$this, 'DisplayRating')); // Displays Rating on Comments              
         
-        // Register and load CSS
+
+    }
+       
+    
+    public static function TriggerRatingField(){
+            // Register and load CSS
         wp_register_style('crfp-rating-css', '/wp-content/plugins/comment-rating-field-plugin/css/rating.css');
         wp_enqueue_style('crfp-rating-css');
         
@@ -36,7 +41,6 @@ class CommentRatingFieldPlugin {
         wp_enqueue_script('crfp-jquery-rating-pack');
         wp_enqueue_script('crfp-jquery-rating-settings');
     }
-       
     /**
     * Saves the POSTed rating for the given comment ID to the comment meta table
     * 
@@ -57,5 +61,5 @@ class CommentRatingFieldPlugin {
         return $comment.'<div class="crfp-rating crfp-rating-'.$rating.'"></div>';    
     }    
 }
-//$crfp = new CommentRatingFieldPlugin(); // Invoke class
+$crfp = new CommentRatingFieldPlugin(); // Invoke class
 ?>

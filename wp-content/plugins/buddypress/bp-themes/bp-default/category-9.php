@@ -1,7 +1,7 @@
 <?php 
 //only used in course guideline, must placed before get_header() 
 //because needed to insert some css
-$crfp = new CommentRatingFieldPlugin(); // Invoke class
+CommentRatingFieldPlugin::TriggerRatingField(); // Trigger class
 
 get_header(); 
 ?>
@@ -75,17 +75,22 @@ jQuery(document).ready(function($) {
 
 	$(".open_comment_form").toggle(
 	function(){
+	    //$("#comment").attr('id', 'comment-tmp');
+	    $(".open_comment_form:contains('收起评价')").triggerHandler("click");		
+		$(".children_comment_row[name="+$(this).attr('name')+"]  textarea[name=comment]").attr('id', 'comment');
+		$(".children_comment_row").hide();
 		$(".children_comment_row[name="+$(this).attr('name')+"]").show();
 		$(this).html("收起评价");
 	},
 	function(){
 		$(".children_comment_row[name="+$(this).attr('name')+"]").hide();
+		$(".children_comment_row[name="+$(this).attr('name')+"]  textarea[name=comment]").attr('id', 'comment-tmp');
 		$(this).html("我要评价");
 	});
 
 	$(".children_comment_row").hide();
 
-	
+	//$("#comment").attr('id', 'comment-tmp');
 	reset_row_color();
 
 	
@@ -105,8 +110,8 @@ jQuery(document).ready(function($) {
 			<h3 class="pagetitle"><?php printf( wp_title( false, false ) ); ?></h3>
 
 <div id="top_menu" style="margin:10px 5px">
-<input type="button" value="展开所有评价" id="spread">
-<input type="button" value="收起所有评价" id="roll_up">
+<input type="button" value="展开所有评价" id="spread" />
+<input type="button" value="收起所有评价" id="roll_up" />
 <form id="search" style="display:inline; float:right;">
 <label for="txt_search">查找：</label>
 <input type="text" maxlength="40" size="20" id="txt_search">
@@ -156,7 +161,7 @@ jQuery(document).ready(function($) {
         				}
                         $aveScore=$numComments ?  $numScore/$numComments : 0;						
                         ?>
-                        <td><div class="crfp-rating crfp-rating-<?php echo  (int) ($aveScore+0.5);?>" "></div> </td>
+                        <td><div class="crfp-rating crfp-rating-<?php echo  (int) ($aveScore+0.5);?>" ></div> </td>
                         <td>[平均:<?php echo number_format( $aveScore, 2);?>分|<?php echo $numComments?>人次]</td>
                         <td><button type="button" name="<?php the_ID(); ?>" class="open_comment_form">我要评价</button></td>
                     </tr>
@@ -241,7 +246,7 @@ jQuery(document).ready(function($) {
         						
         						<p class="form-textarea">
         							<label for="comment"><?php _e('Comment', 'buddypress'); ?></label>
-        							<textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea>
+        							<textarea name="comment" id="comment-tmp" cols="60" rows="10" tabindex="4"></textarea>
         						</p>
         
         						<?php do_action( 'bp_blog_comment_form' ) ?>
